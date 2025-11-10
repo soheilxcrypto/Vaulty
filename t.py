@@ -1,6 +1,8 @@
-import ipfshttpclient
+from eth_keys import keys
+import os
 
-client = ipfshttpclient.connect("/ip4/127.0.0.1/tcp/5002/http")
-
-cid = client.add_bytes(b"hello ipfs")
-print(cid)
+priv_bytes = os.urandom(32)  # حتماً 32 بایت
+priv = keys.PrivateKey(priv_bytes)
+pub_hex = priv.public_key.to_hex()
+print("Private key:", priv.to_hex())
+print("Public key:", pub_hex)
