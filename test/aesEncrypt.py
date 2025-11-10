@@ -239,6 +239,7 @@ def add_from_private_key():
     if not addr:
         return
     RECIPIENTS.append({"address": addr, "pubkey_hex": pub[2:]})
+    print (RECIPIENTS)
     save_recipients(RECIPIENTS)
     refresh_recipient_listbox()
     messagebox.showinfo("Imported", "Public key extracted and recipient saved.")

@@ -1,0 +1,12 @@
+{
+  "original_file": "content idea.txt",
+  "cid": "QmViDNFiKVucBC15kRiAFcAuVCJE52fkq5uPacH5B96D2E",
+  "iv_hex": "9e1aab86ed586f68821b477a",
+  "aes_key_hex": "8d4eaad2404500f398a3a9bd561c43acd1ad31cfe066e5f9fdbecab3475213f5",
+  "recipients": [
+    {
+      "address": "0x7De8BEFf92a498Ddf28C8ACE0eD0298aD61Ee5B5",
+      "enc_key_hex": "04d7906ebdd27396d7a993262ecd10def49352b59912feef984538f41605d89e02f0303d1426b6e577319de3e20603fb9cb51fa85d1742c5540b1a78d2c87bb95ffdd48d0edbefca5ebdb6f93377ebee3243d9138c847d817d613d665d4be6868e9d3ac6bf80d68e079d56614dfa41985e11fed34d397f668590dd5dff1853f39c"
+    }
+  ]
+}
