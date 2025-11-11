@@ -82,19 +82,40 @@ def send_addfile_tx(cfg, cid, recipient_addresses, enc_keys_bytes):
     acct = Account.from_key(cfg["owner_private_key"])
     contract = w3.eth.contract(address=Web3.to_checksum_address(cfg["contract_address"]), abi=CONTRACT_ABI)
 
-    # prepare enc keys as hex (bytes handled automatically by web3)
     enc_keys_hex = [Web3.to_hex(e) for e in enc_keys_bytes]
 
     nonce = w3.eth.get_transaction_count(acct.address)
+    gas_estimate = contract.functions.addFile(cid, recipient_addresses, enc_keys_hex).estimate_gas({
+        "from": acct.address
+    })
     tx = contract.functions.addFile(cid, recipient_addresses, enc_keys_hex).build_transaction({
         "from": acct.address,
         "nonce": nonce,
-        "gas": 500000,
+        "gas": int(gas_estimate * 1.2),  # 20٪ حاشیه امنیت
         "gasPrice": w3.eth.gas_price
     })
     signed = acct.sign_transaction(tx)
     tx_hash = w3.eth.send_raw_transaction(signed.raw_transaction)
+
+    print("Transaction sent. Waiting for confirmation...")
+    try:
+        # صبر برای تأیید تراکنش
+        receipt = w3.eth.wait_for_transaction_receipt(tx_hash, timeout=180, poll_latency=5)
+    except Exception as e:
+        raise RuntimeError(f"Transaction not confirmed or failed to fetch receipt: {e}")
+
+    # بررسی وضعیت
+    if receipt is None:
+        raise RuntimeError("No transaction receipt returned by network.")
+    if receipt.get("status") != 1:
+        raise RuntimeError(f"Transaction failed. Receipt: {receipt}")
+
+    print("✅ Transaction confirmed successfully!")
+    print("📜 Block number:", receipt["blockNumber"])
+    print("🔗 Tx hash:", tx_hash.hex())
+
     return tx_hash.hex()
+
 
 def main():
     if len(sys.argv) < 2:
@@ -108,6 +129,7 @@ def main():
     print("Generated AES key (hex):", aes_key.hex())
 
     # 2) encrypt file
+    payload, iv = aes_encrypt_file(filepath, aes_key)
     # مسیرهای خروجی
     base_dir = "encrypt-uploads"
     enc_dir = os.path.join(base_dir, "ences")
@@ -120,7 +142,6 @@ def main():
     with open(enc_path, "wb") as f:
         f.write(payload)
     print("Encrypted file saved:", enc_path)
-
 
     # 3) upload to IPFS
     cid = upload_to_ipfs_bytes(cfg["ipfs_api_url"], payload, enc_filename)
@@ -146,7 +167,8 @@ def main():
             for i in range(len(recipient_addresses))
         ]
     }
-    outpath = os.path.basename(filepath) + "_upload_record.json"
+    out_filename = os.path.basename(filepath) + "_upload_record.json"
+    outpath = os.path.join(json_dir, out_filename)
     with open(outpath, "w", encoding="utf8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)
     print("Saved local record:", outpath)

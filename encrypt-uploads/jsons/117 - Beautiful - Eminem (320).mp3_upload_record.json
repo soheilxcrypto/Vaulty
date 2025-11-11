@@ -1,0 +1,16 @@
+{
+  "original_file": "117 - Beautiful - Eminem (320).mp3",
+  "cid": "QmcgG254H5erxJ4XPZKGN3eNrFBXhJWgjYbMmvgPYikjHx",
+  "iv_hex": "74009c93023b6a5f710a15aa",
+  "aes_key_hex": "5d2e8f1fd53b905c6845ccbd1c02493f6c60eaf818f9d6cda64faf7954bde65c",
+  "recipients": [
+    {
+      "address": "0x7De8BEFf92a498Ddf28C8ACE0eD0298aD61Ee5B5",
+      "enc_key_hex": "04fa2fc0238078110c706106ab1e04be40ecb7fb3c45f4e266796ac30a8e46d80866c6caeb521861ee0640530be5193e64a60371882ad349e5e738b77adee46b5221ba3b198890f039f08791f452c876a2263ccf5ad29c10034c33323f60406a32e4befaf86cd3449d6e38478a1be7a085027ebc339262a5e0f17fa5d0ece8759d"
+    },
+    {
+      "address": "0xdFF1824bE88e9b916869Fc05D2156F54be2a5b35",
+      "enc_key_hex": "04031c8efec07b45e51144aa22bbb932b48b5aa48555176eddf2ad42c41c706f39f8ebb3495a3c05567529b4a829a71854bdeab7bf85d0807887c20063df9f0d46ba4736b7768be470e16ce8d23f9675cd1e468a6f526a699622b963ed0174768ba7ccccadbf19c4c931aabf0bd3fb0142366a5432b1a13f421aa10e149ee24d19"
+    }
+  ]
+}
