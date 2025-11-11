@@ -1,0 +1,16 @@
+{
+  "original_file": "B123F33B-46A4-48CF-8A2D-CD03EEDF7C1B.jpeg",
+  "cid": "QmPWtf4Tf9o1dop1n9YfD9yvFUXwVNuFMsy9rXvNmgWJQ6",
+  "iv_hex": "ffdd4f128ecf964f5ed5509f",
+  "aes_key_hex": "13c932dacae563993ef65497cd783e342962aa3bfe86a565b9209916be363076",
+  "recipients": [
+    {
+      "address": "0x7De8BEFf92a498Ddf28C8ACE0eD0298aD61Ee5B5",
+      "enc_key_hex": "045fc84901ff0d1b4e293fcaba01382a4622a1b2a97b304d081924a8af98a310a1eb0372edea2d6273d1fd0642a544469b8eec5da06af6cd7f97cda462614bec12b55d10a4a5c464de2f0ae6d1d3b7fa02e0bb8b50ff9610dd8e52f98d1f01d9b7d849c80925e08d17e62b49988c701c50bb65d4544bce370d4f8e909892e1157b"
+    },
+    {
+      "address": "0xdFF1824bE88e9b916869Fc05D2156F54be2a5b35",
+      "enc_key_hex": "042c387eed1152d9c1d82a3d731621ddfdb6c8eea02cad2a90b4570d82f764d90bd8e6e5883da9dd580c9654e2ce8b3d4b1533092a1cc9575e83085495eced4e01278f8c90e373cc78636e3dd8761b71f5c604e1d416dc20018a572b2c71c2bc80cf98413fde7e45bed694c7d5b4d626669f21be18008b2a9a5ed4b09ca448b3cd"
+    }
+  ]
+}

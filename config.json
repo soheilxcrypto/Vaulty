@@ -4,7 +4,8 @@
     "owner_private_key": "0xcd9d2a57e646cad4f208cf26d22f4d14104c48081e1efd007688c0fdb2a5a8ee",
     "ipfs_api_url": "http://127.0.0.1:5002/api/v0/add",
     "recipients": [
-      {"address": "0x7De8BEFf92a498Ddf28C8ACE0eD0298aD61Ee5B5", "pubkey_hex": "0x04a762c1ab8342616623a3250855049f3a3b933b79e6c6efa9a5bdf092e6579bff49b5b3af4d52b3979d4f9f949350a0ff14aa64af04ebd0fbf3660eb2cb816488"}
+      {"address": "0x7De8BEFf92a498Ddf28C8ACE0eD0298aD61Ee5B5", "pubkey_hex": "0x04a762c1ab8342616623a3250855049f3a3b933b79e6c6efa9a5bdf092e6579bff49b5b3af4d52b3979d4f9f949350a0ff14aa64af04ebd0fbf3660eb2cb816488"},
+      {"address": "0xdff1824be88e9b916869fc05d2156f54be2a5b35", "pubkey_hex": "0x2d14c36dfd744e7d02508eed7193f6114ad3324382fc50b4a9dc3a23535e43e3c9cd9bc31d4b418281cd26687ec352bb11c33d4493e3cc71ff65dbab0b949927"}
     ]
   }
   

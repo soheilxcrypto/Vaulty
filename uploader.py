@@ -108,11 +108,19 @@ def main():
     print("Generated AES key (hex):", aes_key.hex())
 
     # 2) encrypt file
-    payload, iv = aes_encrypt_file(filepath, aes_key)
+    # مسیرهای خروجی
+    base_dir = "encrypt-uploads"
+    enc_dir = os.path.join(base_dir, "ences")
+    json_dir = os.path.join(base_dir, "jsons")
+    os.makedirs(enc_dir, exist_ok=True)
+    os.makedirs(json_dir, exist_ok=True)
+
     enc_filename = os.path.basename(filepath) + ".enc"
-    with open(enc_filename, "wb") as f:
+    enc_path = os.path.join(enc_dir, enc_filename)
+    with open(enc_path, "wb") as f:
         f.write(payload)
-    print("Encrypted file saved:", enc_filename)
+    print("Encrypted file saved:", enc_path)
+
 
     # 3) upload to IPFS
     cid = upload_to_ipfs_bytes(cfg["ipfs_api_url"], payload, enc_filename)
