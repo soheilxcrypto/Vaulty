@@ -46,8 +46,8 @@ A secure and private file storage system leveraging **IPFS** and **Ethereum (Sep
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/secure-file-manager.git
-cd secure-file-manager
+git clone https://github.com/soheilxcrypto/Vaulty.git
+cd Vaulty
 ```
 
 2. Install Python dependencies:
